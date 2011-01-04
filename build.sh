@@ -1,10 +1,11 @@
 #!/bin/bash
 
+TOP_DIR=`dirname $0`
 SQL_HOST=localhost
-if [ -f build.properties ]; then
-    source build.properties
+if [ -f $TOP_DIR/build.properties ]; then
+    source $TOP_DIR/build.properties
 fi
-SQL_CMD="psql --set ON_ERROR_STOP=on"
+SQL_CMD="psql -h $SQL_HOST --set ON_ERROR_STOP=on"
 
 MODULES_FILE=build.modules
 SOURCE_FILE=build.sources
