@@ -1,7 +1,8 @@
 #!/bin/bash
 
-if [ -z $SQL_USER ]; then
-    SQL_USER=inari
+SQL_HOST=localhost
+if [ -f build.properties ]; then
+    source build.properties
 fi
 SQL_CMD="psql --set ON_ERROR_STOP=on"
 
